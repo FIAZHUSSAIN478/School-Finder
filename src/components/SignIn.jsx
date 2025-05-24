@@ -34,7 +34,7 @@ export default function SignIn() {
   };
 
   const goToSignUp = () => {
-    navigate('/signup');
+    navigate('/signup');n
   };
 
   const goToForgotPassword = () => {

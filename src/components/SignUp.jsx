@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import axios from 'axios';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 export default function SignUp() {
@@ -14,22 +13,17 @@ export default function SignUp() {
   });
 
   const handleChange = (e) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
 
-  // const handleSignUp = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     await axios.post('http://localhost:5000/api/users/register', formData);
-  //     alert('Registration successful!');
-  //     navigate('/login');
-  //   } 
-    // catch (err) {
-    //   alert(err.response?.data?.error || 'Something went wrong!');
-    // }
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    console.log('User Registered:', formData);
+    alert('Registration successful!');
+    navigate('/login');
   };
 
   const goToSignIn = () => {
@@ -51,7 +45,7 @@ export default function SignUp() {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
-              placeholder="ali hussnain"
+              placeholder="Ali Hussnain"
             />
           </div>
 
@@ -64,7 +58,7 @@ export default function SignUp() {
               onChange={handleChange}
               required
               className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
-              placeholder="ali786example.com"
+              placeholder="ali786@example.com"
             />
           </div>
 
